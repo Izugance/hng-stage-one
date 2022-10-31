@@ -1,11 +1,12 @@
+import json
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework.decorators import api_view
 
 
-class InternApiView(APIView):
-    def get(self, request, *args, **kwargs):
-        """Return a data response in the specified format."""
+@api_view(["GET"])
+def intern_api_view(request):
         data = {
                 "slackUsername": "izugance",
                 "backend": True,
@@ -14,6 +15,4 @@ class InternApiView(APIView):
                         "wigglings through life's craziness."
                         )
                 }
-
-        return Response(data, status=status.HTTP_200_OK)
-
+        return Response(data)

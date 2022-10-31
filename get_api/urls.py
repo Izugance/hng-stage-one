@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import InternApiView
+from .views import intern_api_view
 
 urlpatterns = [
-    path('', InternApiView.as_view())
+    path('', intern_api_view)
 ]
