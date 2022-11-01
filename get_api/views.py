@@ -1,6 +1,4 @@
-import json
-
-from rest_framework.views import APIView
+from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
@@ -15,4 +13,4 @@ def intern_api_view(request):
                         "wigglings through life's craziness."
                         )
                 }
-        return Response(data)
+        return JsonResponse(data)
